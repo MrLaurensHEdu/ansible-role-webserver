@@ -1,0 +1,12 @@
+---
+- name: Installeer Apache, PHP en de PHP-MySQL
+  ansible.builtin.apt:
+    name:
+      - apache2
+      - php
+      - php-mysql
+      - libapache2-mod-php
+    state: present
+    update_cache: true
+  # Deze notify triggert de handler onderaan de role
+  notify: Herstart Apache

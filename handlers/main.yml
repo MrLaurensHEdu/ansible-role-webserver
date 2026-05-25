@@ -1,0 +1,5 @@
+---
+- name: Herstart Apache
+  ansible.builtin.service:
+    name: apache2
+    state: restarted
